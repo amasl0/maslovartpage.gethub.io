@@ -37,10 +37,10 @@
 						<p>Краткое описание <br>проекта</p>
 					</div>
 				</div>
-				<a class="main-down" href="#"><i class="icon-down"></i></a>
+				<a class="main-down" href="#portfolio"><i class="icon-down"></i></a>
 			</div> 
 
-			<div class="portfolio">
+			<div class="portfolio" id="portfolio">
 				<div class="container">
 					<h2 class="section-header">краткое описание</h2>
 					   <div class="text">
@@ -89,6 +89,24 @@
 					</div>
 				</div>
 			</div>
+     
 
+      <!-- scroll -->
+       <script>
+       	  $(document).ready(function () {
+       	  	// Навигация - плавный скроллинг к якорю
+       	  	$(".slowly").on("click", function (event) {
+       	  		//отменяем стандартную обработку нажатия по ссылке
+       	  		event.preventDefault();
+       	  		//забираем индентификатор бока с атрибута href
+       	  		var id = $(this).attr('href'),
+       	  		//узнаём высоту от начала страницы до блока на которой ссылкается якорь
+       	  	    top = $(id).offset().top;
+       	  	    //анимируем переход на расстояние - top за 1500 мс
+       	  	    $('body,html').animate({scrollTop: top}, 1600);
+       	  	});
+       	  });
+       	
+       </script>
   </body>
 </html>
